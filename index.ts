@@ -1,18 +1,20 @@
+import { Stream, Readable } from 'stream';
+
 // GIF CONSTANTS: http://www.matthewflickinger.com/lab/whatsinagif/bits_and_bytes.asp (Jump to "Graphics Control Extension")
 // Init "Graphics Control Extension"
 const BLOCK_TERMINATOR = { value: '00' };
 const EXTENSION_INTRODUCER = {
   value: '21',
   head: 0,
-  tail: 1,
+  tail: 1
 };
 const GRAPHIC_CONTROL_LABEL = {
   value: 'f9',
   head: 1,
-  tail: 2,
+  tail: 2
 };
 
-export default function isAnimated(buffer: Buffer) {
+export function isAnimatedGif(buffer: Buffer, timeout: number = 1000) {
   // NOT a GIF
   if (buffer.slice(0, 3).toString() !== 'GIF') {
     return false;
@@ -21,8 +23,13 @@ export default function isAnimated(buffer: Buffer) {
   let result = false;
   let pointer = '';
   let count = 0;
+  const initialTime = Date.now();
   // Go through each chunk of the buffer
   for (let i = 0; i < buffer.length; i++) {
+    // Timeoput has reached, break the loop
+    if (Date.now() >= initialTime + timeout) {
+      return false;
+    }
     // Get each chunk of the buffer
     const headIntro = i + EXTENSION_INTRODUCER.head;
     const tailIntro = i + EXTENSION_INTRODUCER.tail;
@@ -47,4 +54,17 @@ export default function isAnimated(buffer: Buffer) {
   }
   // If none matches, return false
   return false;
+}
+
+export async function isAnimatedGifStream(
+  stream: Readable,
+  timeout: number = 1000
+) {
+  const buffer = await new Promise<Buffer>((resolve, reject) => {
+    const _buf = Array<any>();
+    stream.on('data', (chunk) => _buf.push(chunk));
+    stream.on('end', () => resolve(Buffer.concat(_buf)));
+    stream.on('error', (err) => reject(`error converting stream - ${err}`));
+  });
+  return isAnimatedGif(buffer, timeout);
 }

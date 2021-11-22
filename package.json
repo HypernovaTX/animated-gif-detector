@@ -1,15 +1,15 @@
 {
-  "name": "animated-gif-detector",
-  "version": "1.2.1",
+  "name": "is-animated-gif",
+  "version": "1.0.0",
   "description": "Detect animated GIFs from JavaScript buffers.",
   "main": "index.ts",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "node test"
+    "test": "jest"
   },
-  "author": "Tom Buchok <tom@buchok.com> (http://buchok.com/), Arthur Guo (https://github.com/hypernovatx)",
+  "author": "Arthur Guo (https://github.com/HypernovaTX)",
   "license": "ISC",
   "devDependencies": {
     "jest": "^27.3.1",
@@ -17,11 +17,12 @@
     "typescript": "^4.5.2"
   },
   "dependencies": {
-    "@types/jest": "^27.0.3"
+    "@types/jest": "^27.0.3",
+    "stream": "0.0.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mailcharts/animated-gif-detector.git"
+    "url": "https://github.com/HypernovaTX/is-animated-gif.git"
   },
   "keywords": [
     "email",
@@ -31,7 +32,7 @@
     "gif"
   ],
   "bugs": {
-    "url": "https://github.com/mailcharts/animated-gif-detector/issues"
+    "url": "https://github.com/HypernovaTX/is-animated-gif/issues"
   },
-  "homepage": "https://github.com/mailcharts/animated-gif-detector"
+  "homepage": "https://github.com/HypernovaTX/is-animated-gif"
 }
