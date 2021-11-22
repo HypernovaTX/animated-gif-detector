@@ -48,16 +48,17 @@ async () => {
 Particularly, you may want to determine animate *as early as possible* in a given HTTP request, and abort the request as soon as you know:
 
 ```js
-var http = require('http')
-  , animated = require('animated-gif-detector')
-;
-var req = http.get('http://domain.com/file.gif')
-  .pipe(animated())
-  .once('animated', function() {
-    req.abort();
-    // do something else!
-  })
-;
+//var http = require('http')
+//  , animated = require('animated-gif-detector')
+//;
+//var req = http.get('http://domain.com/file.gif')
+//  .pipe(animated())
+//  .once('animated', function() {
+//    req.abort();
+//    // do something else!
+//  })
+//;
+// WIP - Will have to test first
 ```
 
 ### Sync
