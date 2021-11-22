@@ -7,12 +7,13 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest"
+    "test": "./node_modules/.bin/jest"
   },
   "author": "Arthur Guo (https://github.com/HypernovaTX)",
   "license": "ISC",
   "devDependencies": {
     "jest": "^27.3.1",
+    "jest-cli": "^27.3.1",
     "ts-jest": "^27.0.7",
     "typescript": "^4.5.2"
   },
