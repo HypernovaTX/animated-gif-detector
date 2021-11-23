@@ -8,6 +8,7 @@ orbs:
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/node
   node: circleci/node@4.7
   jest: blimmer/jest@1.0.0
+  coveralls: coveralls/coveralls@1.0.6
 
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
@@ -30,7 +31,16 @@ jobs:
       - run:
           name: Run tests
           command: npm test
-
+  build-and-coverage:
+    docker:
+      - image: cimg/node:16.10
+    steps:
+      - checkout
+      - run:
+          name: Install and Make 2
+          command: npm install && make test-coverage
+      - coveralls/upload:
+          parallel: true
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
