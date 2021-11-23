@@ -33,12 +33,15 @@ jobs:
           command: npm test
   build-and-coverage:
     docker:
-      - image: cimg/node:16.10
+      - image: circleci/node:10.0.0
     steps:
       - checkout
+      - node/install-packages:
+          # If you are using yarn, change the line below from "npm" to "yarn"
+          pkg-manager: npm
       - run:
-          name: Install and Make
-          command: npm install && make test-coverage
+          name: Make
+          command: make test-coverage
       - coveralls/upload:
           parallel: true
 workflows:
