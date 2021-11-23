@@ -1,4 +1,4 @@
-import { Stream, Readable } from 'stream';
+import { Readable } from 'stream';
 
 // GIF CONSTANTS: http://www.matthewflickinger.com/lab/whatsinagif/bits_and_bytes.asp (Jump to "Graphics Control Extension")
 // Init "Graphics Control Extension"
