@@ -40,7 +40,7 @@ jobs:
           pkg-manager: npm
       - run:
           name: Make test coverage
-          command: make test-coverage
+          command: makefile test-coverage
       - coveralls/upload:
           parallel: true
 workflows:
