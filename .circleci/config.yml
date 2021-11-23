@@ -36,11 +36,9 @@ jobs:
       - image: cimg/node:16.10
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: npm
       - run:
-          name: Make test coverage
-          command: makefile test-coverage
+          name: Install and Make
+          command: npm install && make test-coverage
       - coveralls/upload:
           parallel: true
 workflows:
