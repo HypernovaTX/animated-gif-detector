@@ -20,7 +20,7 @@
 
 ## is-animated-gif
 
-Detect animated GIFs from JavaScript buffers.
+Detect animated GIFs from JavaScript buffers. Also supported with Typescript.
 
 ## Motivation
 
