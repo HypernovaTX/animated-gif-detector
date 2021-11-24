@@ -68,3 +68,5 @@ export async function isAnimatedGifStream(
   });
   return isAnimatedGif(buffer, timeout);
 }
+const animated = { isAnimatedGif, isAnimatedGifStream };
+export default animated;

@@ -90,17 +90,7 @@ isAnimatedGif(buffer);
 
 ## Tests
 
-In order for tests to work, please ensure to install Jest globally:
-
-#### NPM:
-
-`npm i -g jest`
-
-#### Yarn:
-
-`yarn global add jest`
-
-Simply execute `jest` runs the tests.
+Simply execute `npm test` or `yarn test` runs the tests.
 
 Please contribute weird animated GIFs to the repository to add to the test cases.
 

@@ -77,4 +77,6 @@ function isAnimatedGifStream(stream, timeout = 1000) {
     });
 }
 exports.isAnimatedGifStream = isAnimatedGifStream;
+const animated = { isAnimatedGif, isAnimatedGifStream };
+exports.default = animated;
 //# sourceMappingURL=index.js.map
