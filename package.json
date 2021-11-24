@@ -1,7 +1,7 @@
 {
   "name": "is-animated-gif",
-  "version": "1.0.0",
-  "description": "Detect animated GIFs from JavaScript buffers.",
+  "version": "1.0.1",
+  "description": "Detect animated GIFs from JS Buffer/Stream.",
   "main": "index.ts",
   "directories": {
     "test": "test"

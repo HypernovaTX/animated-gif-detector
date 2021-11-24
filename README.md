@@ -18,90 +18,96 @@
 [license-shield]: https://img.shields.io/github/license/HypernovaTX/is-animated-gif.svg
 [license-url]: https://github.com/HypernovaTX/is-animated-gif/blob/master/LICENSE
 
-is-animated-gif
----
+## is-animated-gif
+
 Detect animated GIFs from JavaScript buffers.
-
-
 
 ## Motivation
 
 Process the streamed/buffered GIF files to determine whether it is an animated GIF or not. This is a rewritten code based off on another work as a purpose to adapt to TypeScript: https://github.com/mailcharts/animated-gif-detector
 
-
-
 ## Installation
+
 #### NPM:
+
 `npm i is-animated-gif`
+
 #### Yarn:
+
 `yarn add is-animated-gif`
 
-
-
-## Usage
-### Importing:
-```ts
-import { isAnimatedGif } from 'is-animated-gif';
-```
- \- and/or -
- ```ts
-import { isAnimatedGifStream } from 'is-animated-gif';
-```
-
-Additonal imports you might need:
- ```ts
-import fs from 'fs';
-import path from 'path';
-```
+## Usage/Functions
 
 ### Async (Stream)
 
-This module is intended to be used as a Stream:
+This function is intended to be used with Stream:
+
+**Function**: `isAnimatedGifStream()`
+
+**Params**: `Stream` (such as: `stream.Stream`, `stream.Readable`, or `http.IncomingMessage`)
+
+**Returns**: `Boolean`
+
+**Example**:
+
 ```ts
-async () => {
-  const file = path.resolve(`./test/files/large-size-not-animated.gif`);
-  const stream = fs.createReadStream(file);
-  return await isAnimatedGifStream(stream); // returns Promise<boolean>
-}
+const file = path.resolve(`./test/files/large-size-not-animated.gif`);
+const stream = fs.createReadStream(file);
+isAnimatedGifStream(stream);
+// ...
 ```
 
-URL request stream example:
+**External Image example**:
+
 ```ts
 http.get(
   'http://smb3a.weebly.com/uploads/1/0/0/7/1007956/7027030.gif',
   async (res) => {
-    const result = await isAnimatedGifStream(res); // returns Promise<boolean>
-    // Your other codes
+    const result = await isAnimatedGifStream(res);
+    // ...
   }
 );
 ```
 
 ### Sync (Buffer)
-If an image is loaded as a buffer directly, a sync function is also available:
+
+This function is intended to be used with Buffer:
+
+**Function**: `isAnimatedGif()`
+
+**Params**: `Buffer`
+
+**Returns**: `Boolean`
+
+**Example**:
+
 ```ts
 const file = path.resolve('./path/to/file.gif');
 const buffer = fs.readFileSync(file);
-isAnimatedGif(buffer); // returns boolean
+isAnimatedGif(buffer);
+// ...
 ```
 
-
-
 ## Tests
+
 In order for tests to work, please ensure to install Jest globally:
+
 #### NPM:
+
 `npm i -g jest`
 
 #### Yarn:
+
 `yarn global add jest`
 
 Simply execute `jest` runs the tests.
 
 Please contribute weird animated GIFs to the repository to add to the test cases.
 
-
-
 ## Credits
+
 Special thanks to the [MailChart](https://github.com/mailcharts) team and other contributers for their hard work!
+
 - Tom Buchok (author) - [GitHub/tbuchok](https://github.com/tbuchok)
 - Bradley Spaulding - [GitHub/bspaulding](https://github.com/bspaulding)
 - Vilson Vieira - [GitHub/automata](https://github.com/automata)
