@@ -194,11 +194,3 @@ test('Animated (stream web) - http://smb3a.weebly.com/uploads/1/0/0/7/1007956/70
     }
   );
 });
-
-// test('streaming => infinite buffer', async () => {
-//   const readable = new stream.Readable();
-//   readable._read = () => Buffer.from('infinite');
-//   console.log('INFINITE');
-//   const result = await isAnimatedGifStream(readable, 2000);
-//   expect(result).toBe(false);
-// });
