@@ -1,20 +1,22 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 [![CircleCI][circleci-shield]][circleci-url]
+[![ISC License][license-shield]][license-url]
 
-[contributors-shield]: https://img.shields.io/github/contributors/HypernovaTX/is-animated-gif.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/HypernovaTX/is-animated-gif.svg
 [contributors-url]: https://github.com/HypernovaTX/is-animated-gif/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/HypernovaTX/is-animated-gif.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/HypernovaTX/is-animated-gif.svg
 [forks-url]: https://github.com/HypernovaTX/is-animated-gif/network/members
-[stars-shield]: https://img.shields.io/github/stars/HypernovaTX/is-animated-gif.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/HypernovaTX/is-animated-gif.svg
 [stars-url]: https://github.com/HypernovaTX/is-animated-gif/stargazers
-[circleci-shield]: https://img.shields.io/circleci/build/github/HypernovaTx/is-animated-gif?style=for-the-badge
+[circleci-shield]: https://circleci.com/gh/HypernovaTX/is-animated-gif/tree/master.svg?style=shield
 [circleci-url]: https://circleci.com/gh/HypernovaTX/is-animated-gif/tree/master
-[issues-shield]: https://img.shields.io/github/issues/HypernovaTX/is-animated-gif.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/HypernovaTX/is-animated-gif.svg
 [issues-url]: https://github.com/HypernovaTX/is-animated-gif/issues
-[license-shield]: https://img.shields.io/github/license/HypernovaTX/is-animated-gif.svg?style=for-the-badge
-[license-url]: https://github.com/HypernovaTX/is-animated-gif/blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/github/license/HypernovaTX/is-animated-gif.svg
+[license-url]: https://github.com/HypernovaTX/is-animated-gif/blob/master/LICENSE
 
 is-animated-gif
 ---
